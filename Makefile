@@ -1,6 +1,6 @@
 CC		= $(CROSS_COMPILE)gcc
 BUILD_OUTPUT	:= $(PWD)
-PREFIX		:= /usr
+PREFIX		:= /usr/local
 DESTDIR		:=
 
 turbostat : turbostat.o resolve.o
