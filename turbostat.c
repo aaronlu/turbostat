@@ -20,7 +20,6 @@
  */
 
 #define _GNU_SOURCE
-#include MSRHEADER
 #include <stdarg.h>
 #include <stdio.h>
 #include <err.h>
@@ -42,6 +41,7 @@
 #include <sys/syscall.h>
 #include <linux/perf_event.h>
 #include "resolve.h"
+#include <asm/msr-index.h>
 
 char *proc_stat = "/proc/stat";
 unsigned int interval_sec = 5;	/* set with -i interval_sec */

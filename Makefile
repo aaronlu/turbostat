@@ -8,7 +8,6 @@ turbostat : turbostat.o resolve.o
 	$(CC) $(LDFLAGS) $^ -o $(BUILD_OUTPUT)/$@
 
 CFLAGS +=	-Wall
-CFLAGS +=	-DMSRHEADER='"/usr/include/asm/msr-index.h"'
 
 %.o: %.c
 	@mkdir -p $(BUILD_OUTPUT)
