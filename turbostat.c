@@ -1290,9 +1290,9 @@ void print_verbose_header(void)
 	if (!do_nehalem_platform_info)
 		return;
 
-	get_msr(0, MSR_NHM_PLATFORM_INFO, &msr);
+	get_msr(0, MSR_PLATFORM_INFO, &msr);
 
-	fprintf(stderr, "cpu0: MSR_NHM_PLATFORM_INFO: 0x%08llx\n", msr);
+	fprintf(stderr, "cpu0: MSR_PLATFORM_INFO: 0x%08llx\n", msr);
 
 	ratio = (msr >> 40) & 0xFF;
 	fprintf(stderr, "%d * %.0f = %.0f MHz max efficiency\n",
