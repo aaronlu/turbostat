@@ -3,9 +3,9 @@ BUILD_OUTPUT	:= $(PWD)
 PREFIX		:= /usr/local
 DESTDIR		:=
 
-turbostat : turbostat.o resolve.o
+turbostat : turbostat.o
 	@mkdir -p $(BUILD_OUTPUT)
-	$(CC) $(LDFLAGS) $^ -o $(BUILD_OUTPUT)/$@
+	$(CC) $(LDFLAGS) -lrt $^ -o $(BUILD_OUTPUT)/$@
 
 CFLAGS +=	-Wall
 
@@ -15,7 +15,7 @@ CFLAGS +=	-Wall
 
 .PHONY : clean
 clean :
-	@rm -f $(BUILD_OUTPUT)/turbostat turbostat.o resolve.o
+	@rm -f $(BUILD_OUTPUT)/turbostat turbostat.o
 
 install : turbostat
 	install -d  $(DESTDIR)$(PREFIX)/bin
