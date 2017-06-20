@@ -5,7 +5,7 @@ DESTDIR		:=
 
 turbostat : turbostat.o
 	@mkdir -p $(BUILD_OUTPUT)
-	$(CC) $(LDFLAGS) -lrt $^ -o $(BUILD_OUTPUT)/$@
+	$(CC) $(LDFLAGS) $^ -lrt -o $(BUILD_OUTPUT)/$@
 
 CFLAGS +=	-Wall
 
